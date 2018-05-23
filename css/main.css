@@ -1,99 +1,170 @@
 @charset "UTF-8";
 /* CSS Document */
 
+
 /*--------------------------------------------------------------
-
 >>> TABLE OF CONTENTS:
-
 ----------------------------------------------------------------
-
-	1.0 - Typography
-		1.1 - Headings
-		1.2 - Body Copy
-		1.3 - Buttons
-		1.4 - Forms
-		1.5 - Lists
-		1.6 - Tables
-
-	2.0 - Navigation Menus
-		2.1 - Main
-		2.2 - Sub
-		2.3 - Footer
-
-	3.0 - Content
-		3.1 - Site Structure
-		3.2	- Site Header
-		3.3	- Site Footer
-
-	4.0 - Media
-
-	5.0 - Utility
-		5.1 - Text Sizes
-		5.2 - Colors
-		5.3 - Alignments
-
+1.0 - Typography
+	1.1 - Headings
+	1.2 - Body Copy
+	1.3 - Buttons
+	1.4 - Lists
+2.0 - Navigation Menus
+	2.1 - Main
+3.0 - Content
+	3.1 - Site Structure
+	3.2	- Site Header
+	3.3	- Site Footer
+4.0 - Utility
+	4.1 - Text Sizes
+	4.2 - Colors
+	4.3 - Alignments
 --------------------------------------------------------------*/
+
+
+* {
+	font-family: 'Open Sans', sans-serif;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
 
 
 
 /*--------------------------------------------------------------
 1.0 - Typography
 -------------------------------------------------------------- */
-h1, h2, h3, p {
+
+h1, h2, h3, h4, dt, #navbar a, blockquote > p {
+	font-family: 'Yeseva One', cursive;
+}
+
+h1, a, #ingredients, #ingredients p, #reviews, #reviews p, body > footer, body > footer p {
 	color: #fff;
 }
 
+body > header, #ingredients, #reviews, #reservations, body > footer {
+	text-align: center;
+}
 
-/*----------   1.1 - Headings    ----------*/
-h1, h2 {
-	font-weight: 900;
+#about h2, #reservations h2, h3, dt {
+	color: #dfc165;
 }
 
 
-/*----------   1.2 - Body Copy    ----------*/
+/* ---- 1.1 - Headings ----- */ 
+h1  {
+	font-size: 75px;
+	margin: 150px 0 125px;
+	-moz-text-shadow: 2px 2px #2b4e44;
+	-o-text-shadow: 2px 2px #2b4e44;
+	-ms-text-shadow: 2px 2px #2b4e44;
+	-webkit-text-shadow: 2px 2px #2b4e44;
+	text-shadow: 2px 2px #2b4e44;
+}
+
+h2, h3 {
+	font-size: 35px;
+}
+
+#menu h2 {
+	display: none;
+}
+
+#menu h3, h4 {
+	margin-top: 0;
+}
+
+
+
+/* ---- 1.2 - Bodycopy ----- */ 
+
 p {
+	color: #585858;
 	line-height: 25px;
+}
+
+blockquote p {
+	line-height: 40px;
+	font-size: 18px;
+	color: #dde0df;
+}
+
+blockquote footer p {
+	font-size: 15px;
+}
+
+dt {
+	border-bottom: 1px solid #dfc165;
+	font-size: 20px;
+	padding-bottom: 8px;
+	margin-bottom: 8px;
+}
+
+dd {
+	-webkit-margin-start: 0;
 	margin-bottom: 30px;
 }
 
 
-/*---------- 	1.3 - Buttons    ----------*/
+
+/* ----- 1.3 - Buttons ----*/
+
 a {
-	color: #000;
 	text-decoration: none;
-	background-color: #fff;
-	padding: 10px 15px;
 }
 
-a:hover {
-	background-color: #25D0D1;
-	color: #fff;
+.btn {
+	padding: 10px 20px;
+	border-width: 2px;
+	border-style: solid;
+	text-transform: uppercase;
 }
 
+nav li:first-child .btn {
+	background-color: #223e35;
+	border-color: #0f1c18;
+}
 
+nav li:last-child .btn, nav li:first-child .btn:hover {
+	background-color: #70a293;
+	border-color: #caddd7;
+}
 
+nav li:last-child .btn:hover {
+	background-color: #223e35;
+	border-color: #0f1c18;
+}
 
+#reservations .btn {
+	background-color: #dfc165;
+	text-transform: none;
+}
+
+#reservations .btn:hover {
+	background-color: #c9a131;
+}
 
 
 /*--------------------------------------------------------------
 2.0 - Navigation Menus
 -------------------------------------------------------------- */
-nav {
-	position: fixed;
-	top: 0; 
-	left: 0;
-	background-color: #fff;
-	width: 100%;
-}
 
-ul {
-	padding: 10px 0;
-	margin: 0;
-	text-align: center;
-}
-
-ul li {
+nav li {
 	display: inline-block;
+	margin: 0 10px;
+}
+
+
+#navbar {
+	text-align: right;
+}
+
+#navbar a:hover {
+	color: #dfc165;
 }
 
 
@@ -104,8 +175,103 @@ ul li {
 3.0 - Content
 -------------------------------------------------------------- */
 
-.wrapper {
-	width: 1170;
+/* --- 3.1	- Site Struture --- */
+.wrapper, .cnt-blk, #reviews div div {
 	margin: 0 auto;
 }
+
+body > header, body > section {
+	padding: 100px 0;
+}
+
+.wrapper {
+	width: 1170px;	
+}
+
+
+#about div div {
+	width: 425px;
+}
+
+.cnt-blk {
+	width: 570px;
+}
+
+
+#ingredients, #reviews {
+	background-color: #dfc165;
+}
+
+#reviews div div {
+	background-color: rgba(0, 0, 0, .7);
+	width: 770px;
+	padding: 30px 70px;
+}
+
+#menu .wrapper {
+	-moz-column-count: 2;
+	-o-column-count: 2;
+	-webkit-column-count: 2;
+	-ms-column-count: 2;
+	column-count: 2;
+	-moz-column-gap: 100px;
+	-o-column-gap: 100px;
+	-webkit-column-gap: 100px;
+	-ms-column-gap: 100px;
+	column-gap: 100px;
+}
+
+#menu section {
+	margin-bottom: 75px;
+}
+
+
+body > footer .wrapper {
+	-moz-column-count: 3;
+	-o-column-count: 3;
+	-webkit-column-count: 3;
+	-ms-column-count: 3;
+	column-count: 3;
+}
+
+
+footer section {
+	height: 190px;
+}
+
+#about, #menu, #reservations {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9f9f9+51,eef1f1+99 */
+	background: #f9f9f9; /* Old browsers */
+	background: -moz-linear-gradient(left, #f9f9f9 51%, #eef1f1 99%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left, #f9f9f9 51%,#eef1f1 99%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right, #f9f9f9 51%,#eef1f1 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#eef1f1',GradientType=1 ); /* IE6-9 */
+}
+
+/* --- 3.2	- Site Header --- */
+
+body > header {
+	padding: 10px 0 100px;
+	
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e362f+0,4d8c79+20,4d8c79+100 */
+	background: #1e362f; /* Old browsers */
+	background: -moz-linear-gradient(top, #1e362f 0%, #4d8c79 20%, #4d8c79 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #1e362f 0%,#4d8c79 20%,#4d8c79 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #1e362f 0%,#4d8c79 20%,#4d8c79 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e362f', endColorstr='#4d8c79',GradientType=0 ); /* IE6-9 */
+}
+
+
+/* --- 3.3	- Site Footer --- */
+
+body > footer {
+	background-color: #4d8c79;
+	padding: 30px 0 20px;
+}
+
+
+
+
+
+
 
